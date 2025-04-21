@@ -1,47 +1,36 @@
-name: Deploy to GitHub Pages
+name: Deploy static content to Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: ['main']
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Install dependencies
-        run: |
-          cd project
-          npm install
+          
+      - name: Install Dependencies
+        working-directory: ./project
+        run: npm install
+        
       - name: Build
-        run: |
-          cd project
-          npm run build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        working-directory: ./project
+        run: npm run build
+        
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: project/dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./project/dist 
