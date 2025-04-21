@@ -83,7 +83,7 @@ const Hero: React.FC<HeroProps> = () => {
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
                   <div className="w-40 h-40 rounded-full border-4 border-[#FFD100] mb-4 overflow-hidden bg-white">
                     <img 
-                      src="/images/profile.jpg"
+                      src="./images/profile.jpg"
                       alt="Abhishek J C"
                       className="w-full h-full object-cover"
                     />
