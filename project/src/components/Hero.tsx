@@ -93,18 +93,6 @@ const Hero: React.FC<HeroProps> = () => {
                   <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center"></div>
                 </div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
-                  <div className="w-40 h-40 rounded-full border-4 border-[#FFD100] mb-4 overflow-hidden bg-white flex items-center justify-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-[#FFD100]">
-                    <img 
-                      src="/images/profile.jpg.png"
-                      alt="Abhishek J C"
-                      className="w-full h-full object-cover rounded-full transition-transform duration-300 hover:scale-110"
-                      style={{
-                        aspectRatio: '1/1',
-                        objectFit: 'cover',
-                        objectPosition: 'center'
-                      }}
-                    />
-                  </div>
                   <h2 className="text-2xl font-bold mb-2">Abhishek J C</h2>
                   <p className="text-[#FFD100] mb-4">Full Stack Developer</p>
                   <div className="w-full max-w-xs">
