@@ -15,36 +15,12 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "GoQuant",
-    description: "A quantitative trading platform that uses machine learning to predict market trends and execute trades automatically.",
-    image: "/images/projects/trading-bot.jpg",
-    technologies: ["Python", "Machine Learning", "React", "Node.js"],
-    githubUrl: "https://github.com/Abhishekjc19/GoQuant",
-    liveUrl: "https://goquant-demo.com"
-  },
-  {
-    id: 2,
     title: "Portfolio Website",
-    description: "A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.",
+    description: "A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, dark mode, and a contact form.",
     image: "/images/projects/portfolio.jpg",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com/Abhishekjc19/PortFolio"
-  },
-  {
-    id: 3,
-    title: "AI Image Recognition",
-    description: "An application that uses deep learning to recognize objects in images with high accuracy.",
-    image: "/images/projects/ai-image.jpg",
-    technologies: ["Python", "TensorFlow", "OpenCV", "Flask"],
-    githubUrl: "https://github.com/Abhishekjc19/ai-image-recognition"
-  },
-  {
-    id: 4,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
-    image: "/images/projects/ecommerce.jpg",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
-    githubUrl: "https://github.com/Abhishekjc19/ecommerce-platform"
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "EmailJS"],
+    githubUrl: "https://github.com/Abhishekjc19/PortFolio",
+    liveUrl: "https://abhishekjc19.github.io/PortFolio/"
   }
 ];
 
