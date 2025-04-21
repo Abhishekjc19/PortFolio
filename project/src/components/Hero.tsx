@@ -1,14 +1,9 @@
 import * as React from 'react';
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
 import { Github, Linkedin, Phone, Mail, Download } from 'lucide-react';
 
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <section id="home" className="h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background particles */}
