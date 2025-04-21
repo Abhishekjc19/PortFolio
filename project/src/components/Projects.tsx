@@ -1,12 +1,12 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Code, LineChart } from 'lucide-react';
 
 interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  icon: React.ReactNode;
   technologies: string[];
   githubUrl: string;
   liveUrl?: string;
@@ -17,7 +17,7 @@ const projects: Project[] = [
     id: 1,
     title: "Portfolio Website",
     description: "A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, dark mode, and a contact form.",
-    image: "/images/portfolio.jpg",
+    icon: <Code className="text-[#FFD100]" size={40} />,
     technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "EmailJS"],
     githubUrl: "https://github.com/Abhishekjc19/PortFolio",
     liveUrl: "https://abhishekjc19.github.io/PortFolio/"
@@ -26,7 +26,7 @@ const projects: Project[] = [
     id: 2,
     title: "GoQuant",
     description: "A quantitative trading platform that uses machine learning to predict market trends and execute trades automatically.",
-    image: "/images/goquant.jpg",
+    icon: <LineChart className="text-[#FFD100]" size={40} />,
     technologies: ["Python", "Machine Learning", "React", "Node.js"],
     githubUrl: "https://github.com/Abhishekjc19/GoQuant",
     liveUrl: "https://goquant-demo.com"
@@ -51,7 +51,7 @@ const Projects = () => {
             My <span className="text-[#FFD100]">Projects</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -61,19 +61,14 @@ const Projects = () => {
                 className="glass-card rounded-lg overflow-hidden group cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white font-medium">View Details</span>
-                  </div>
-                </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                  <p className="text-gray-300 mb-4 line-clamp-2">{project.description}</p>
+                  <div className="flex items-center mb-4">
+                    <div className="bg-[#FFD100]/20 p-3 rounded-full mr-4">
+                      {project.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                  </div>
+                  <p className="text-gray-300 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech) => (
                       <span
@@ -122,14 +117,12 @@ const Projects = () => {
             exit={{ opacity: 0, scale: 0.9 }}
             className="glass-card max-w-2xl w-full p-6 rounded-lg"
           >
-            <div className="relative h-64 mb-6 rounded-lg overflow-hidden">
-              <img
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="w-full h-full object-cover"
-              />
+            <div className="flex items-center mb-6">
+              <div className="bg-[#FFD100]/20 p-3 rounded-full mr-4">
+                {selectedProject.icon}
+              </div>
+              <h3 className="text-2xl font-bold text-white">{selectedProject.title}</h3>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">{selectedProject.title}</h3>
             <p className="text-gray-300 mb-6">{selectedProject.description}</p>
             <div className="flex flex-wrap gap-2 mb-6">
               {selectedProject.technologies.map((tech) => (
