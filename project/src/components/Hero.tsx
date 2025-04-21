@@ -34,14 +34,24 @@ const Hero: React.FC<HeroProps> = () => {
               <a href="#contact" className="btn-primary">
                 Get In Touch
               </a>
-              <a 
-                href="https://raw.githubusercontent.com/Abhishekjc19/PortFolio/main/project/public/files/resume.pdf"
-                download="Abhishek_JC_Resume.pdf"
+              <button 
+                onClick={() => {
+                  // Create a link element
+                  const link = document.createElement('a');
+                  link.href = 'https://raw.githubusercontent.com/Abhishekjc19/PortFolio/main/project/public/files/resume.pdf';
+                  link.download = 'Abhishek_JC_Resume.pdf';
+                  link.target = '_blank';
+                  
+                  // Append to body, click, and remove
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className="btn-outline flex items-center"
               >
                 <Download className="mr-2" size={18} />
                 Download Resume
-              </a>
+              </button>
             </div>
             
             <div className="flex gap-5 mt-8">
@@ -85,7 +95,7 @@ const Hero: React.FC<HeroProps> = () => {
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
                   <div className="w-40 h-40 rounded-full border-4 border-[#FFD100] mb-4 overflow-hidden bg-white flex items-center justify-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-[#FFD100]">
                     <img 
-                      src={`${import.meta.env.BASE_URL}images/profile.jpg.png`}
+                      src="/images/profile.jpg.png"
                       alt="Abhishek J C"
                       className="w-full h-full object-cover rounded-full transition-transform duration-300 hover:scale-110"
                       style={{
