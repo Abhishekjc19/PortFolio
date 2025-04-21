@@ -36,8 +36,7 @@ const Hero: React.FC<HeroProps> = () => {
               </a>
               <a 
                 href="https://raw.githubusercontent.com/Abhishekjc19/PortFolio/main/project/public/files/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                download="Abhishek_JC_Resume.pdf"
                 className="btn-outline flex items-center"
               >
                 <Download className="mr-2" size={18} />
