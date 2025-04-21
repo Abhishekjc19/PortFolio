@@ -3,18 +3,31 @@ name: Deploy
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm ci
-      - run: npm run build
-      - uses: JamesIves/github-pages-deploy-action@v4
+          cache: 'npm'
+          cache-dependency-path: './project/package-lock.json'
+      
+      - name: Install Dependencies
+        run: cd project && npm install
+      
+      - name: Build
+        run: cd project && npm run build
+      
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
+          folder: project/dist
           branch: gh-pages 
