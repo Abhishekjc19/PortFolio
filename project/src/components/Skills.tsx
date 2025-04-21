@@ -17,6 +17,12 @@ const skills: Skill[] = [
   { name: 'TypeScript', level: 75, category: 'Frontend' },
   { name: 'SQL', level: 85, category: 'Database' },
   { name: 'Git', level: 90, category: 'Tools' },
+  { name: 'TensorFlow', level: 75, category: 'AI/ML' },
+  { name: 'OpenCV', level: 70, category: 'AI/ML' },
+  { name: 'MongoDB', level: 75, category: 'Database' },
+  { name: 'Express.js', level: 75, category: 'Backend' },
+  { name: 'Tailwind CSS', level: 80, category: 'Frontend' },
+  { name: 'Framer Motion', level: 70, category: 'Frontend' }
 ];
 
 const Skills = () => {

@@ -57,49 +57,58 @@ const Education = () => {
               <h3 className="text-2xl font-semibold gradient-text">Certifications</h3>
             </div>
             
-            <div className="space-y-6">
-              <div className="bg-black/30 p-6 rounded-xl border border-[#FFD100]/20 hover:border-[#FFD100]/40 transition-all duration-300">
-                <h4 className="text-xl font-semibold mb-2">Geodata using Python</h4>
-                <p className="text-[#FFD100] mb-3">Indian Space Research Organization (ISRO)</p>
-                <p className="text-gray-300 text-sm mb-4">
-                  Comprehensive certification covering geospatial data analysis, visualization, and processing using Python libraries. Focused on satellite imagery analysis and geographical information systems.
+            <div className="border-l-2 border-[#FFD100]/30 pl-6 ml-6 space-y-10 relative">
+              {/* Timeline dot */}
+              <div className="absolute top-0 left-0 w-4 h-4 bg-[#FFD100] rounded-full transform -translate-x-[9px]"></div>
+              
+              <div>
+                <div className="flex items-center mb-2">
+                  <Calendar className="text-[#FFD100] mr-2" size={16} />
+                  <span className="text-gray-400 text-sm">2023</span>
+                </div>
+                <h4 className="text-xl font-semibold mb-1">Remote Sensing and GIS Applications</h4>
+                <p className="text-[#FFD100] mb-2">Indian Institute of Remote Sensing (IIRS)</p>
+                <p className="text-gray-300 text-sm">
+                  Completed a comprehensive course on remote sensing technologies and GIS applications for environmental monitoring and analysis.
                 </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <Calendar className="text-gray-400 mr-2" size={16} />
-                    <span className="text-gray-400 text-sm">2023</span>
-                  </div>
+                <div className="mt-3 flex items-center">
                   <a 
-                    href="https://certificate.iirs.gov.in/checkstatus.php?uid=c603e9fbd28808687b01007fbf03e0e8&enm=20241332341873"
-                    target="_blank"
+                    href="https://certificate.iirs.gov.in/checkstatus.php?uid=c603e9fbd28808687b01007fbf03e0e8&enm=20241332341873" 
+                    target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-[#FFD100] text-sm hover:underline"
+                    className="bg-[#FFD100]/20 text-[#FFD100] px-3 py-1 rounded-full text-sm hover:bg-[#FFD100]/30 transition-colors"
                   >
                     View Certificate
                   </a>
                 </div>
               </div>
               
-              {/* Placeholder for additional certifications */}
-              <div className="bg-black/30 p-6 rounded-xl border border-white/10 hover:border-[#FFD100]/20 transition-all duration-300 opacity-70">
-                <h4 className="text-xl font-semibold mb-2">Machine Learning Specialization</h4>
-                <p className="text-[#FFD100] mb-3">Placeholder for Future Certification</p>
-                <p className="text-gray-300 text-sm mb-4">
-                  This is a placeholder for future certifications. The website design accommodates additional credentials as they are acquired.
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <Calendar className="text-gray-400 mr-2" size={16} />
-                    <span className="text-gray-400 text-sm">Coming Soon</span>
-                  </div>
+              <div>
+                <div className="flex items-center mb-2">
+                  <Calendar className="text-[#FFD100] mr-2" size={16} />
+                  <span className="text-gray-400 text-sm">2022</span>
                 </div>
+                <h4 className="text-xl font-semibold mb-1">Machine Learning Specialization</h4>
+                <p className="text-[#FFD100] mb-2">Stanford University (Coursera)</p>
+                <p className="text-gray-300 text-sm">
+                  Completed a specialization in machine learning covering supervised learning, unsupervised learning, and deep learning.
+                </p>
               </div>
               
-              <div className="text-center mt-8">
-                <a href="#" className="btn-outline">
-                  View All Credentials
-                </a>
+              <div>
+                <div className="flex items-center mb-2">
+                  <Calendar className="text-[#FFD100] mr-2" size={16} />
+                  <span className="text-gray-400 text-sm">2022</span>
+                </div>
+                <h4 className="text-xl font-semibold mb-1">Full Stack Web Development</h4>
+                <p className="text-[#FFD100] mb-2">Udemy</p>
+                <p className="text-gray-300 text-sm">
+                  Completed a comprehensive course on full stack web development covering frontend and backend technologies.
+                </p>
               </div>
+              
+              {/* Timeline end dot */}
+              <div className="absolute bottom-0 left-0 w-4 h-4 bg-[#FFD100] rounded-full transform -translate-x-[9px]"></div>
             </div>
           </div>
         </div>
