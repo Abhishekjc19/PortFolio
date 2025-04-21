@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { Github as GitHub, Linkedin, Phone, Mail, Download } from 'lucide-react';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { Github, Linkedin, Phone, Mail, Download } from 'lucide-react';
 
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
     <section id="home" className="h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background particles */}
@@ -30,11 +35,9 @@ const Hero: React.FC<HeroProps> = () => {
                 Get In Touch
               </a>
               <a 
-                href="#" 
-                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                  e.preventDefault(); 
-                  alert('Resume download will be implemented with actual file');
-                }} 
+                href="/files/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-outline flex items-center"
               >
                 <Download className="mr-2" size={18} />
@@ -57,7 +60,7 @@ const Hero: React.FC<HeroProps> = () => {
                 rel="noopener noreferrer"
                 className="text-white hover:text-[#FFD100] transition-colors duration-300"
               >
-                <GitHub size={24} />
+                <Github size={24} />
               </a>
               <a 
                 href="tel:6362206323" 

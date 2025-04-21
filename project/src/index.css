@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply font-sans text-white bg-[#111111];
+    @apply bg-black text-white;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -18,7 +18,7 @@
 
 @layer components {
   .glass-card {
-    @apply relative backdrop-blur-lg bg-white/10 border border-white/20 shadow-xl rounded-xl overflow-hidden;
+    @apply bg-black/30 backdrop-blur-md border border-[#FFD100]/20 rounded-lg;
   }
   
   .yellow-glow {
@@ -39,30 +39,73 @@
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-[#FFD100] text-black font-bold rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105;
+    @apply px-6 py-3 bg-[#FFD100] text-black font-medium rounded-lg hover:bg-yellow-400 transition-colors duration-300;
   }
   
   .btn-outline {
-    @apply px-6 py-3 border-2 border-[#FFD100] text-[#FFD100] font-bold rounded-full hover:bg-[#FFD100]/10 transition-all duration-300;
+    @apply px-6 py-3 border border-[#FFD100] text-[#FFD100] font-medium rounded-lg hover:bg-[#FFD100]/10 transition-colors duration-300;
+  }
+
+  .glass-nav {
+    @apply fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-[#FFD100]/20 transition-all duration-300;
+  }
+
+  .glass-nav.scrolled {
+    @apply bg-black/90;
   }
 }
 
-/* Custom scroll bar */
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-[#222222];
+  @apply bg-black;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-[#FFD100]/50 rounded-full;
+  @apply bg-[#FFD100]/20 rounded-full hover:bg-[#FFD100]/30 transition-colors duration-300;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-[#FFD100];
+/* Selection styling */
+::selection {
+  @apply bg-[#FFD100]/20 text-white;
+}
+
+/* Loading animation */
+.loading-dots::after {
+  content: '.';
+  animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60% {
+    content: '...';
+  }
+  80%, 100% {
+    content: '';
+  }
 }
 
 /* Glassmorphism elements */
