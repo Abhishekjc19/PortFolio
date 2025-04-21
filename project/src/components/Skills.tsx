@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-react';
+import { motion, useInView } from 'framer-motion';
 import { Code, Database, Cpu, ChevronRight } from 'lucide-react';
 
 interface Skill {
