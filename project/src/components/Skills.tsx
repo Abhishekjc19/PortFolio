@@ -9,20 +9,43 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: 'Python', level: 90, category: 'Programming' },
-  { name: 'C++', level: 85, category: 'Programming' },
-  { name: 'Machine Learning', level: 80, category: 'AI/ML' },
+  // Programming Languages
+  { name: 'Python', level: 90, category: 'Programming Languages' },
+  { name: 'C', level: 85, category: 'Programming Languages' },
+  { name: 'C++', level: 85, category: 'Programming Languages' },
+  { name: 'Java', level: 80, category: 'Programming Languages' },
+  
+  // Data Structures & Algorithms
+  { name: 'Arrays', level: 90, category: 'Data Structures & Algorithms' },
+  { name: 'Linked Lists', level: 85, category: 'Data Structures & Algorithms' },
+  { name: 'Trees', level: 80, category: 'Data Structures & Algorithms' },
+  { name: 'Graphs', level: 75, category: 'Data Structures & Algorithms' },
+  { name: 'Dynamic Programming', level: 70, category: 'Data Structures & Algorithms' },
+  { name: 'Searching & Sorting', level: 85, category: 'Data Structures & Algorithms' },
+  
+  // Frontend
   { name: 'React', level: 85, category: 'Frontend' },
-  { name: 'Node.js', level: 80, category: 'Backend' },
   { name: 'TypeScript', level: 75, category: 'Frontend' },
+  { name: 'Tailwind CSS', level: 80, category: 'Frontend' },
+  { name: 'Framer Motion', level: 70, category: 'Frontend' },
+  
+  // Backend
+  { name: 'Node.js', level: 80, category: 'Backend' },
+  { name: 'Express.js', level: 75, category: 'Backend' },
+  
+  // Database
   { name: 'SQL', level: 85, category: 'Database' },
-  { name: 'Git', level: 90, category: 'Tools' },
+  { name: 'MongoDB', level: 75, category: 'Database' },
+  
+  // AI/ML
+  { name: 'Machine Learning', level: 80, category: 'AI/ML' },
   { name: 'TensorFlow', level: 75, category: 'AI/ML' },
   { name: 'OpenCV', level: 70, category: 'AI/ML' },
-  { name: 'MongoDB', level: 75, category: 'Database' },
-  { name: 'Express.js', level: 75, category: 'Backend' },
-  { name: 'Tailwind CSS', level: 80, category: 'Frontend' },
-  { name: 'Framer Motion', level: 70, category: 'Frontend' }
+  
+  // Tools & Technologies
+  { name: 'Git', level: 90, category: 'Tools & Technologies' },
+  { name: 'Docker', level: 75, category: 'Tools & Technologies' },
+  { name: 'VS Code', level: 90, category: 'Tools & Technologies' }
 ];
 
 const Skills = () => {

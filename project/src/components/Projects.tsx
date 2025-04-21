@@ -17,10 +17,19 @@ const projects: Project[] = [
     id: 1,
     title: "Portfolio Website",
     description: "A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features smooth animations, dark mode, and a contact form.",
-    image: "/images/projects/portfolio.jpg",
+    image: "/images/portfolio.jpg",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "EmailJS"],
     githubUrl: "https://github.com/Abhishekjc19/PortFolio",
     liveUrl: "https://abhishekjc19.github.io/PortFolio/"
+  },
+  {
+    id: 2,
+    title: "GoQuant",
+    description: "A quantitative trading platform that uses machine learning to predict market trends and execute trades automatically.",
+    image: "/images/goquant.jpg",
+    technologies: ["Python", "Machine Learning", "React", "Node.js"],
+    githubUrl: "https://github.com/Abhishekjc19/GoQuant",
+    liveUrl: "https://goquant-demo.com"
   }
 ];
 
