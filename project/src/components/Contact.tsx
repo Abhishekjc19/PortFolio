@@ -29,16 +29,17 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current!,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       setSuccess(true);
       setForm({ name: '', email: '', message: '' });
     } catch (error) {
       setError('Failed to send message. Please try again.');
+      console.error('EmailJS Error:', error);
     } finally {
       setLoading(false);
     }

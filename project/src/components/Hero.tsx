@@ -4,6 +4,18 @@ import { Github, Linkedin, Phone, Mail, Download } from 'lucide-react';
 interface HeroProps {}
 
 const Hero: React.FC<HeroProps> = () => {
+  const handleResumeDownload = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = '/files/resume.pdf';
+    link.download = 'Abhishek_JC_Resume.pdf';
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="home" className="h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background particles */}
@@ -30,18 +42,7 @@ const Hero: React.FC<HeroProps> = () => {
                 Get In Touch
               </a>
               <button 
-                onClick={() => {
-                  // Create a link element
-                  const link = document.createElement('a');
-                  link.href = 'https://raw.githubusercontent.com/Abhishekjc19/PortFolio/main/project/public/files/resume.pdf';
-                  link.download = 'Abhishek_JC_Resume.pdf';
-                  link.target = '_blank';
-                  
-                  // Append to body, click, and remove
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
+                onClick={handleResumeDownload}
                 className="btn-outline flex items-center"
               >
                 <Download className="mr-2" size={18} />
